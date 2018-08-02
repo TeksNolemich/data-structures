@@ -129,6 +129,8 @@ define(['../../lib/chai/chai.js', '../../lib/underscore/underscore.js'], functio
         var extendsConstructor = requireOption('extendsConstructor');
         it(might('extend the constructor function', extendsConstructor), function() {
           constructorPropertyCount = Object.keys(constructor).length;
+          //touch later
+          // console.log(Object.keys(constructor).length, constructor);
           assuming(extendsConstructor).expect(constructorPropertyCount).to.be.above(0);
         });
 

@@ -35,6 +35,7 @@ define([
       verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
 
       it('reports a size of zero for a new stack', function() {
+        // debugger;
         expect(stack.size()).to.equal(0);
       });
 
@@ -107,10 +108,12 @@ define([
       verifyClass(instantiator).followsPattern(variant, {}, prototypeOfInstances);
 
       it('reports a size of zero for a new queue', function() {
+
         expect(queue.size()).to.equal(0);
       });
 
       it('reports a size of 2 after adding two items', function() {
+        // console.log(queue.enqueue);
         queue.enqueue('a');
         queue.enqueue('b');
         expect(queue.size()).to.equal(2);
