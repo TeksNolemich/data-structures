@@ -7,15 +7,11 @@ var Tree = function(value) {
   newTree.children = [];  
   return newTree;
 };
-
 var treeMethods = {};
-
-
 treeMethods.addChild = function(value) {
   // debugger;
   this.children.push(Tree(value));
 };
-
 treeMethods.contains = function(target, node) {
   if(target === node.value) {
     return true;  
