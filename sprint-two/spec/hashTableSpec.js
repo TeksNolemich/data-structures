@@ -15,6 +15,9 @@ describe('hashTable', function() {
 
   it('should store values that were inserted', function() {
     hashTable.insert('Steven', 'Seagal');
+    hashTable.insert('Bob', 'Shmo');
+    hashTable.insert('Steve', 'world');
+    hashTable.retrieve('Steven');
     expect(hashTable.retrieve('Steven')).to.equal('Seagal');
   });
 
@@ -31,6 +34,9 @@ describe('hashTable', function() {
 
   it('should not contain values that were removed', function() {
     hashTable.insert('Steven', 'Tyler');
+    hashTable.insert('Joe', 'Montana');
+    // debugger;
+    hashTable.insert('Bob', 'Smith');
     hashTable.remove('Steven');
     expect(hashTable.retrieve('Steven')).to.equal(undefined);
   });
