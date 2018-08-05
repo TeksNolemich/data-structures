@@ -36,24 +36,27 @@ binaryTreeMethods.insert = function(value) {
 
 binaryTreeMethods.contains = function(value) {
   var headNode = this;
+  //return value for the contains function
   var truthy = false;
   var searchFunc = function(value, headNode) {
     //if headNode.value is equal to value
     
     if (headNode.value === value) {
+      //toggle truthy to true bc there is a match
       truthy = true;
       return truthy;
-      //return true
     }
-    //if value < headNode.value 
+    //if value < headNode.value and headNode.left is not null
     if (value < headNode.value && headNode.left !== null) {
+      //reassign headNode to left
       headNode = headNode.left;
     } else if (value > headNode.value && headNode.right !== null) {
-      //set headNode to headNode.right
+      //reassign headNode to left
       headNode = headNode.right
     }else {
       return truthy;
     }
+    //call recursive method on the new headNode
     searchFunc(value, headNode);
   }
   searchFunc(value, headNode);
